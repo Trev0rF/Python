@@ -1,0 +1,58 @@
+#counter on the number of times a number is divisible
+divisible_30 = 0
+divisible_5 = 0
+divisible_3 = 0
+divisible_2 = 0
+divisible_3_2 = 0
+divisible_none = 0
+
+#ask user to enter in two numbers that fit criteria
+while True:
+    try:
+        lower = int(input("Enter a lower limit greater than zero: "))
+        if lower > 0:
+            break
+    except:
+            print("Please enter a number greater than zero")
+
+
+while True:
+    try:
+        upper = int(input("Enter an upper limit greater than the lower: "))
+        if upper > lower:
+            break
+    except:
+        print("Please enter a number greater than the lower limit")
+
+#Create if/elif statements to start our loop
+for number in range(lower, upper +1):
+    if number > 0:
+        if number % 30 == 0:
+            print("Foo")
+            divisible_30 +=1
+        elif number % 5 == 0:
+            print("Bar")
+            divisible_5 +=1
+        elif number % 3 == 0:
+            print("Fizz")
+            divisible_3 +=1
+        elif number % 2 == 0:
+            print("Buzz")
+            divisible_2 +=1
+        elif number % 3 ==0 and number % 2 == 0:
+            print("FizzBuzz")
+            divisible_3_2 +=1
+        else:
+            print("Bazz")
+            divisible_none +=1
+
+#Print final statements given in assignment.
+
+print("The total numbers evaluated was", str(number),".")
+print( "There were", divisible_30 ,"numbers that are divisible by 30.")
+print("There were", divisible_5 ,"numbers that are divisible by 5.")
+print("There were", divisible_3 ,"numbers that are divisible by 3.")
+print("There were", divisible_2 ,"numbers that are divisible by 2.")
+print("There were", divisible_3_2 ,"numbers that are divisible by both 3 and 2.")
+print("There were", divisible_none ,"numbers that didn't meet any of the requirements above.")
+
